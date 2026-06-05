@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Solar System</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+background:
+radial-gradient(circle at center,#081120,#000 70%);
+}
+
+/* Stars */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:blink 3s infinite alternate;
+}
+
+@keyframes blink{
+from{opacity:.2;}
+to{opacity:1;}
+}
+
+/* Center */
+
+.solar-system{
+position:relative;
+width:100vw;
+height:100vh;
+overflow:hidden;
+}
+
+/* Sun */
+
+.sun{
+position:absolute;
+top:50%;
+left:50%;
+width:120px;
+height:120px;
+margin-left:-60px;
+margin-top:-60px;
+border-radius:50%;
+background:yellow;
+background-size:cover;
+box-shadow:
+0 0 20px gold,
+0 0 60px orange,
+0 0 100px rgba(255,140,0,0.4);
+z-index:100;
+}
+
+/* Orbit Common */
+
+.orbit{
+position:absolute;
+top:50%;
+left:50%;
+border:1px solid rgba(255,255,255,.08);
+border-radius:50%;
+transform:translate(-50%,-50%);
+}
+
+.planet{
+position:absolute;
+border-radius:50%;
+background-size:cover;
+background-position:center;
+}
+
+/* Mercury */
+
+.orbit1{
+width:220px;
+height:220px;
+animation:spin 5s linear infinite;
+}
+.mercury{
+width:16px;
+height:16px;
+left:102px;
+top:-8px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/4/4a/Mercury_in_true_color.jpg");
+}
+
+/* Venus */
+
+.orbit2{
+width:320px;
+height:320px;
+animation:spin 8s linear infinite;
+}
+.venus{
+width:22px;
+height:22px;
+left:149px;
+top:-11px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/e/e5/Venus-real_color.jpg");
+}
+
+/* Earth */
+
+.orbit3{
+width:450px;
+height:450px;
+animation:spin 12s linear infinite;
+}
+.earth{
+width:26px;
+height:26px;
+left:212px;
+top:-13px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg");
+}
+
+/* Mars */
+
+.orbit4{
+width:580px;
+height:580px;
+animation:spin 16s linear infinite;
+}
+.mars{
+width:22px;
+height:22px;
+left:279px;
+top:-11px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/0/02/OSIRIS_Mars_true_color.jpg");
+}
+
+/* Jupiter */
+
+.orbit5{
+width:760px;
+height:760px;
+animation:spin 25s linear infinite;
+}
+.jupiter{
+width:60px;
+height:60px;
+left:350px;
+top:-30px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/e/e2/Jupiter.jpg");
+}
+
+/* Saturn */
+
+.orbit6{
+width:980px;
+height:980px;
+animation:spin 35s linear infinite;
+}
+.saturn{
+width:50px;
+height:50px;
+left:465px;
+top:-25px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/c/c7/Saturn_during_Equinox.jpg");
+position:absolute;
+}
+
+.saturn:after{
+content:"";
+position:absolute;
+width:80px;
+height:20px;
+border:2px solid rgba(255,255,255,.7);
+border-radius:50%;
+left:-15px;
+top:13px;
+}
+
+/* Uranus */
+
+.orbit7{
+width:1200px;
+height:1200px;
+animation:spin 45s linear infinite;
+}
+.uranus{
+width:36px;
+height:36px;
+left:582px;
+top:-18px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/3/3d/Uranus2.jpg");
+}
+
+/* Neptune */
+
+.orbit8{
+width:1450px;
+height:1450px;
+animation:spin 60s linear infinite;
+}
+.neptune{
+width:34px;
+height:34px;
+left:708px;
+top:-17px;
+background-image:url("https://upload.wikimedia.org/wikipedia/commons/5/56/Neptune_Full.jpg");
+}
+
+@keyframes spin{
+from{
+transform:translate(-50%,-50%) rotate(0deg);
+}
+to{
+transform:translate(-50%,-50%) rotate(360deg);
+}
+}
+
+</style>
+</head>
+<body>
+
+<div class="solar-system">
+
+<div class="star" style="top:5%;left:10%;width:2px;height:2px"></div>
+<div class="star" style="top:15%;left:80%;width:3px;height:3px"></div>
+<div class="star" style="top:25%;left:30%;width:4px;height:4px"></div>
+<div class="star" style="top:40%;left:90%;width:2px;height:2px"></div>
+<div class="star" style="top:70%;left:15%;width:3px;height:3px"></div>
+<div class="star" style="top:80%;left:75%;width:4px;height:4px"></div>
+<div class="star" style="top:50%;left:50%;width:2px;height:2px"></div>
+<div class="star" style="top:10%;left:60%;width:3px;height:3px"></div>
+<div class="star" style="top:90%;left:40%;width:4px;height:4px"></div>
+
+<div class="sun"></div>
+
+<div class="orbit orbit1"><div class="planet mercury"></div></div>
+<div class="orbit orbit2"><div class="planet venus"></div></div>
+<div class="orbit orbit3"><div class="planet earth"></div></div>
+<div class="orbit orbit4"><div class="planet mars"></div></div>
+<div class="orbit orbit5"><div class="planet jupiter"></div></div>
+<div class="orbit orbit6"><div class="planet saturn"></div></div>
+<div class="orbit orbit7"><div class="planet uranus"></div></div>
+<div class="orbit orbit8"><div class="planet neptune"></div></div>
+
+</div>
+
+</body>
+</html>
